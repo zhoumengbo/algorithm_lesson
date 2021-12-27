@@ -37,4 +37,8 @@ for i in range(a):
     input3 = list(map(int, input().split()))
     n = len(input2)
     k = input3[0]
-    print(find_max(input2, n, k))
+    m = input1[0]
+    if m < k:
+        print(-1)
+    else:
+        print(find_max(input2, n, k))

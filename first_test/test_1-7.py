@@ -14,29 +14,6 @@
 # 1 2 9
 
 
-# if __name__ == '__main__':
-#     for _ in range(int(input())):
-#         num = list(map(int, input().split(' ')))[0]
-#         num_list = list(map(int, input().split(' ')))
-#         i = 0
-#         index = 0
-#         while 2**i < num:
-#             nums = []
-#             for j in range(2**i):
-#                 nums.append(num_list[index])
-#                 index += 1
-#                 if index == num:
-#                     break
-#             nums.sort()
-#             print_str = []
-#             for k in nums:
-#                 if k == nums[len(nums) - 1]:
-#                     print_str.append('{0}'.format(k))
-#                 else:
-#                     print_str.append('{0} '.format(k))
-#             print(''.join(print_str))
-#             # i += 1
-
 if __name__ == '__main__':
     for _ in range(int(input())):
         num = list(map(int, input().split(' ')))[0]
