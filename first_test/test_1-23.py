@@ -50,8 +50,6 @@ def chess(tr, tc, pr, pc, size):  # tr:棋盘初始行号 tc:棋盘初始列号
         chess(tr + half, tc + half, tr + half, tc + half, half)
 
 
-# 将[tr+half,tc+half]作为小规模棋盘格的特殊点，进行递归
-
 # 输出矩阵
 def show(table):
     n = len(table)
@@ -61,21 +59,25 @@ def show(table):
         print('')
 
 
-mark = 0
-n = 4  # 输入8*8的棋盘规格
-table = [[-1 for x in range(n)] for y in range(n)]  # -1代表特殊格子
-chess(0, 0, 2, 2, n)  # 特殊棋盘位置
-show(table)
+def find_others(table, x, y):
+    n = len(table)
+    l_num = table[x][y]
+    first_print = 0
+    for i in range(n):
+        for j in range(n):
+            if table[i][j] == l_num and (i != x or j != y):
+                if first_print == 0:
+                    print(str(i) + ' ' + str(j), end=',')
+                    first_print += 1
+                else:
+                    print(str(i) + ' ' + str(j))
 
 
-# for _ in range(int(input())):
-#     num_list = list(map(int, input().split(' ')))
-#
-#     print_str = []
-#     for i in range(len(num_list)):
-#         if i == len(num_list) - 1:
-#             print_str.append('{0}'.format(num_list[i]))
-#         else:
-#             print_str.append('{0} '.format(num_list[i]))
-#     print(''.join(print_str))
-
+for _ in range(int(input())):
+    character_list = list(map(int, input().split(' ')))
+    find_list = list(map(int, input().split(' ')))
+    mark = 0
+    n = 2 ** character_list[0]
+    table = [[-1 for x in range(n)] for y in range(n)]  # -1代表特殊格子
+    chess(0, 0, character_list[1], character_list[2], n)  # 特殊棋盘位置
+    find_others(table, find_list[0], find_list[1])
