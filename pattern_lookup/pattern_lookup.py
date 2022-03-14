@@ -41,7 +41,7 @@ def resolve_question():
             for line in json_file:
                 json_dict = json.loads(line)
                 content = json_dict.get("content", None)
-                # check correctness
+                # get question result
                 print(question_path)
                 pattern_lookup(content)
             json_file.close()
