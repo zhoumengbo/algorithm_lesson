@@ -2,9 +2,7 @@
 # 假设现在有n个位置的接送请求，并且有n辆专车，其中第i辆车到位置j的距离dij是给定的。
 # 请你描述一个派遣n辆专车到n个地点的有效算法，使得n个专车的总行程最小。
 
-import numpy as np
-from scipy.optimize import linear_sum_assignment
-
+# 解决指派问题（匈牙利算法）
 # input:
 # 第1行：n, 车和地点数量
 # 后面n行：第n辆车分别到各个地点的距离
@@ -14,6 +12,10 @@ from scipy.optimize import linear_sum_assignment
 # 2 4 6 8
 # 5 4 3 5
 # 3 6 7 10
+
+import numpy as np
+from scipy.optimize import linear_sum_assignment
+
 
 if __name__ == "__main__":
     n = int(input())
